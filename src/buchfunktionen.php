@@ -4,8 +4,8 @@
   Autor: lzainzinger
   Version: 2015-05-04
 */
-
-include("import/config.php");
+require_once '/home/ebibliothek/vendor/autoload.php';
+require_once '/home/ebibliothek/ebibliothek/generated-conf/config.php';
 
 class Buchfunktionen{
 

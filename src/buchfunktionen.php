@@ -7,11 +7,15 @@
 require_once '/home/ebibliothek/vendor/autoload.php';
 require_once '/home/ebibliothek/ebibliothek/generated-conf/config.php';
 
+include("/home/ebibliothek/ebibliothek/generated-classes/Base/BookQuery.php");
+include("/home/ebibliothek/ebibliothek/generated-classes/BookQuery.php");
+
 class Buchfunktionen{
 
   function delete($title){
-    $book = BookQuery::create()->findOneByTitle($title);
+    $book = BookQuery::create()->filterByTitle($title);
     $file = $book->getPath(); // Pfad zum File am Server
+
 
   // Löschen des Datenbank - Eintrages
     $book->delete(); // Löschen DB

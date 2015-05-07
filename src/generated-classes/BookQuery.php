@@ -19,7 +19,7 @@ class BookQuery extends BaseBookQuery
     Autor: lzainzinger
     Version: 2015-05-07
   */
-  function delete($title){
+  function deleteFromServer($title){
     $book = BookQuery::create()->findOneByTitle($title);
     $file = $book->getPath(); // Pfad zum File am Server
 

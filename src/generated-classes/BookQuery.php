@@ -14,14 +14,13 @@ use Base\BookQuery as BaseBookQuery;
  */
 class BookQuery extends BaseBookQuery
 {
-
   /*
     Delete-Funktion um ein File aus dem Server und den dazugehörigen DB-Eintrag zu löschen
     Autor: lzainzinger
-    Version: 2015-05-04
+    Version: 2015-05-07
   */
   function delete($title){
-    $book = BookQuery::create()->filterByTitle($title);
+    $book = BookQuery::create()->findOneByTitle($title);
     $file = $book->getPath(); // Pfad zum File am Server
 
 

@@ -15,7 +15,7 @@ use Base\BookQuery as BaseBookQuery;
 class BookQuery extends BaseBookQuery
 {
   /*
-    Delete-Funktion um ein File aus dem Server und den dazugehörigen DB-Eintrag zu löschen
+    Delete-Funktion um ein File aus dem Server und den dazugehoerigen DB-Eintrag zu loeschen
     Autor: lzainzinger
     Version: 2015-05-07
   */
@@ -24,18 +24,17 @@ class BookQuery extends BaseBookQuery
     $file = $book->getPath(); // Pfad zum File am Server
 
 
-  // Löschen des Datenbank - Eintrages
-    $book->delete(); // Löschen DB
-
-
-  // Löschen des Files vom Server
-    if (!unlink($file)) // Löschen des Files vom Server und Überprüfung
+  // Loeschen des Files vom Server
+    if (!unlink($file)) // Loeschen des Files vom Server und Überprüfung
     {
       echo ("Error deleting $file"); // Ausgabe bei Error
     }
     else
     {
       echo ("Deleted $file"); // Ausgabe wenn Erfolgreich
+
+      // Loeschen des Datenbank - Eintrages
+        $book->delete(); // Loeschen DB
     }
   }
 }

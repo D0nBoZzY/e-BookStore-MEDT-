@@ -25,7 +25,7 @@ class BookQuery extends BaseBookQuery
 
 
   // Loeschen des Files vom Server
-    if (!unlink($file)) // Loeschen des Files vom Server und Überprüfung
+    if (!unlink($file)) // Loeschen des Files vom Server und ueberpruefung
     {
       echo ("Error deleting $file"); // Ausgabe bei Error
     }

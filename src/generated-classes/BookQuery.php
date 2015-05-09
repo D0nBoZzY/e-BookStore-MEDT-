@@ -14,5 +14,27 @@ use Base\BookQuery as BaseBookQuery;
  */
 class BookQuery extends BaseBookQuery
 {
+  /*
+    Delete-Funktion um ein File aus dem Server und den dazugehoerigen DB-Eintrag zu loeschen
+    Autor: lzainzinger
+    Version: 2015-05-07
+  */
+  function deleteFromServer($title){
+    $book = BookQuery::create()->findOneByTitle($title);
+    $file = $book->getPath(); // Pfad zum File am Server
 
+
+  // Loeschen des Files vom Server
+    if (!unlink($file)) // Loeschen des Files vom Server und ueberpruefung
+    {
+      echo ("Error deleting $file"); // Ausgabe bei Error
+    }
+    else
+    {
+      echo ("Deleted $file"); // Ausgabe wenn Erfolgreich
+
+      // Loeschen des Datenbank - Eintrages
+        $book->delete(); // Loeschen DB
+    }
+  }
 }

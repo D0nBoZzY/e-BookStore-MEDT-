@@ -19,7 +19,7 @@
         <column name="year" type="date" required="true" />
         <column name="user_id" type="integer" required="true" />
         
-        <foreign-key foreignTable="user" phpName="User" refPhpName="Book">
+        <foreign-key foreignTable="user" phpName="User" refPhpName="Book_user">
             <reference local="user_id" foreign="user_id" />
         </foreign-key>
     </table>
@@ -32,10 +32,10 @@
         <column name="date" type="date" required="true" />
         <column name="text" type="varchar" size="255" required="true" />
         
-        <foreign-key foreignTable="user" phpName="User" refPhpName="Book">
+        <foreign-key foreignTable="user" phpName="User" refPhpName="Comment_user">
             <reference local="user_id" foreign="user_id" />
         </foreign-key>
-        <foreign-key foreignTable="book" phpName="Book" refPhpName="Book">
+        <foreign-key foreignTable="book" phpName="Book" refPhpName="Comment_book">
             <reference local="book_id" foreign="book_id" />
         </foreign-key>
     </table>
@@ -45,10 +45,10 @@
         
         <column name="rating" type="tinyint" required="true" />
         
-        <foreign-key foreignTable="user" phpName="User" refPhpName="Book">
+        <foreign-key foreignTable="user" phpName="User" refPhpName="Rating_user">
             <reference local="user_id" foreign="user_id" />
         </foreign-key>
-        <foreign-key foreignTable="book" phpName="Book" refPhpName="Book">
+        <foreign-key foreignTable="book" phpName="Book" refPhpName="Rating_book">
             <reference local="book_id" foreign="book_id" />
         </foreign-key>
     </table>
@@ -58,10 +58,10 @@
         
         <column name="bookmark" type="integer" required="true" />
         
-        <foreign-key foreignTable="user" phpName="User" refPhpName="Book">
+        <foreign-key foreignTable="user" phpName="User" refPhpName="Read_user">
             <reference local="user_id" foreign="user_id" />
         </foreign-key>
-        <foreign-key foreignTable="book" phpName="Book" refPhpName="Book">
+        <foreign-key foreignTable="book" phpName="Book" refPhpName="Read_book">
             <reference local="book_id" foreign="book_id" />
         </foreign-key>
     </table>

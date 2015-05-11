@@ -17,7 +17,7 @@ class BookQuery extends BaseBookQuery
   /*
     Delete-Funktion um ein File aus dem Server und den dazugehoerigen DB-Eintrag zu loeschen
     Autor: lzainzinger
-    Version: 2015-05-07
+    Version: 2015-05-08
   */
   function deleteFromServer($title){
     $book = BookQuery::create()->findOneByTitle($title);
@@ -36,5 +36,16 @@ class BookQuery extends BaseBookQuery
       // Loeschen des Datenbank - Eintrages
         $book->delete(); // Loeschen DB
     }
+  }
+
+  /*
+    Download-Funktion um ein File aus dem Server und den dazugehoerigen DB-Eintrag zu loeschen
+    Autor: lzainzinger
+    Version: 2015-05-09
+  */
+  function downloadFromServer($title){
+    $book = BookQuery::create()->findOneByTitle($title);
+    $file = $book->getPath(); // Pfad zum File am Server
+    echo '<a href="'.$file.'">zum Download</a>'; //Ausgabe des Pfades zum File fuer den Download
   }
 }

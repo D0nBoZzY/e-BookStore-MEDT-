@@ -20,12 +20,11 @@ class BookQuery extends BaseBookQuery
     Version: 2015-05-08
   */
   function deleteFromServer($title){
-    $book="";
-    if(BookQuery::create()->findOneByTitle($title){ // Ueberpruefen ob Daten existieren
+    if(BookQuery::create()->findOneByTitle($title)){
       $book = BookQuery::create()->findOneByTitle($title);
-      $file = $book->getPath(); // Pfad zum File am Server
+      $file = $book->getPath();
     }else{
-      echo ("File does not exist!"); // Ausgabe wenn Eintrag nicht in DB
+      echo ("File does not exist!");
     }
 
   // Loeschen des Files vom Server
@@ -38,7 +37,7 @@ class BookQuery extends BaseBookQuery
       echo ("Deleted $file"); // Ausgabe wenn Erfolgreich
 
       // Loeschen des Datenbank - Eintrages
-      $book->delete(); // Loeschen DB
+        $book->delete(); // Loeschen DB
     }
   }
 

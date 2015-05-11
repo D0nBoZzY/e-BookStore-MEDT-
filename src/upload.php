@@ -73,6 +73,7 @@ function create_url($AWS_AKI, $AWS_SAK, $AT, $title) {
 }
 
 if(isset($_POST['upload'])){
+    $title = $_POST['title'];
     $url = create_url($AWS_ACCESS_KEY_ID, $AWS_SECRET_ACCESS_KEY, $ASSOCIATE_TAG, $title);
     echo($url);
 }
@@ -103,7 +104,7 @@ if(isset($_POST['upload'])){
 
     <form action="upload.php" method="post" enctype="multipart/form-data">
         Set a Title:
-        <input type="test" name="title" class="input_text"><br />
+        <input type="text" name="title" class="input_text"><br />
         Select a book to upload:
         <input type="file" name="fileToUpload" id="fileToUpload">
         <input type="submit" value="Upload Book" name="upload">

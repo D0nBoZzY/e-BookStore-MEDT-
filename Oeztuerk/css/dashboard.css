@@ -1,0 +1,32 @@
+body {
+	font-family: 'caflisch script', cursive;
+	font-size: 18px;
+}
+#hintergrund_main {
+	background-color: #FFFFFF;
+}
+#picture{
+	margin-left:30px;
+}
+#header {
+	color: #E0F810;
+	font-size: 28px;
+}
+#btn_reg {
+	font-size: 20px;
+	/**background-color: #66CCFF;
+	color: #FFFFFF;
+	border-color: #FFFFFF;
+	**/
+}
+
+#btn_signin{
+}
+
+#test { 
+	background-color: #66CCFF;
+}
+h2 {
+    font-size: 60px;
+	color: #74c5db;
+}

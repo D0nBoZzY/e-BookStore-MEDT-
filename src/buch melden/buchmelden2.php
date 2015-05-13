@@ -1,16 +1,11 @@
 <?php
-/*
-* Funktion um ein Buch zu melden aus welchen Gründen auch immer.
-* @author Mateusz Gala
-* @version 2015-05-08
-*
-*/
 
 $to = 'mgala@student.tgm.ac.at'; // admin/mod mail
 
+$endingmessage = '';
 $err = '';
 $work = true;
-$buchid = 12345123; //eine echte Buch ID muss hinzugefügt werden
+$buchid = 12345123; //derzeit ein beispiel -> wenn fertig ist es eine globale variable von der vorherigen seite
 
 if (isset($_POST['send'])) {
 	//message
@@ -19,23 +14,24 @@ if (isset($_POST['send'])) {
 	$antw3 = '';
 	$antw4 = '';
 	if (isset($_POST['opt1'])){
-	$antw1 = 'Illegale oder unangemessene Inhalte melden <br />';
+	$antw1 = 'Report illegal or inappropriate content <br />';
 	}
 	if (isset($_POST['opt2'])){
-	$antw2 = 'Buchbeschreibung entspircht nicht dem Buchinhalt <br />';
+	$antw2 = 'Book Description does not correspond to the book content <br />';
 	}
 	if (isset($_POST['opt3'])){
-	$antw3 = 'Der Inhalt wird falsch angezeigt <br />';
+	$antw3 = 'The content is displayed incorrectly <br />';
 	}
 	if (isset($_POST['opt4'])){
-	$antw4 = 'Unpassendes Bild zum Buch <br />';
+	$antw4 = 'Unfitting picture to the book <br />';
 	}
 	if ((empty($_POST['message'])) && (!isset($_POST['opt1'])) && (!isset($_POST['opt2'])) && (!isset($_POST['opt3'])) && (!isset($_POST['opt4']))) {
 			$err .= 'Please select an anwser or enter a messege!' . "<br>\n";
 			$work = false;
 		}else{
-			$message = $antw1 . $antw2 . $antw3 .  $antw4 . $_POST['message'] . '<br /> <br />'. 'Das gemeldete Buch: ' . $buchid;
-			echo $message;
+			$message = $antw1 . $antw2 . $antw3 .  $antw4 . $_POST['message'] . '<br /> <br />'. 'The reported book: ' . $buchid;
+			$endingmessage = 'Thank You For Your Support!';
+			header("Refresh: 3; URL=http://www.google.com");
 		}		
 
 	$id = 10; //user id; hier nur als beispiel; MUSS NOCH GESETZT WERDEN
@@ -44,7 +40,7 @@ if (isset($_POST['send'])) {
 	'Reply-To: mgala@student.tgm.ac.at' . "\r\n" .
 	'X-Mailer: PHP/' . phpversion();
 	
-	mail($to, 'Buch wurde gemeldet', $message, $headers);
+	mail($to, 'Book was reported', $message, $headers);
 }
 }
 
@@ -58,7 +54,6 @@ if (isset($_POST['send'])) {
 	
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<script language="javascript" type="text/javascript" src="jquery-2.1.4.min.js"></script>
-
 	<script language="javascript" type = "text/javascript">
     /*
 	* A function for hiding and showing the textfield if the checkbox is checked
@@ -85,38 +80,38 @@ if (isset($_POST['send'])) {
 </head>
 	<body>
 		<div id="form">
-		<h1> Problem bei einem Buch melden </h1>
+		<h1> Report a problem </h1>
 		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 			<table>
 				<tr>
 				<td>
-					<p class="q">Welche der folgenden Beschreibungen trifft am besten auf das Problem zu, das Sie melden möchten?</p>
+					<p class="q">Which of the following applies best to the problem that you are reporting?</p>
 				</td></tr>
 				
 				
 					<tr><td>
 					<input type="checkbox" name="opt1" value="send" />
-					Illegale oder unangemessene Inhalte melden
+					Report illegal or inappropriate content
 					</td></tr>
 					
 					<tr><td>
 					<input type="checkbox" name="opt2" value="send" />
-					Buchbeschreibung entspircht nicht dem Buchinhalt
+					Book Description does not correspond to the book content
 					</td></tr>
 										
 					<tr><td>
 					<input type="checkbox" name="opt3" value="send" />
-					Der Inhalt wird falsch angezeigt
+					The content is displayed incorrectly
 					</td></tr>
 										
 					<tr><td>
 					<input type="checkbox" name="opt4" value="send" />
-					Unpassendes Bild zum Buch
+					Unfitting picture to the book
 					</td></tr>
 										
 					<tr><td align="left"><br />
 					<input type="checkbox" name="opt5" id="click" value="send" onclick="showDiv1();" />
-					Eigene Nachricht verfassen
+					Write your own message
 					</td></tr>
 					
 					<tr><td>
@@ -129,6 +124,7 @@ if (isset($_POST['send'])) {
 					
 					<tr><td align="center"><br />
 					<input type="submit" name="send" value="send" class="inputs_send" />
+					<br /><br /> <?php echo $endingmessage ?>
 				</form>
 				</td></tr>
 			</table>

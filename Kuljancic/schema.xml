@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="ebibliothek" defaultIdMethod="native">
+  <table name="user" phpName="User">
+    <column name="UserID" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+    <column name="benutzername" type="varchar" size="255" required="true" />
+    <column name="passwort" type="varchar" size="24" required="true"/>
+    <column name="rolle" type="integer" required="true"/>
+  </table>
+</database>

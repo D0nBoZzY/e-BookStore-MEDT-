@@ -4,7 +4,7 @@ ini_set('display_errors', '1');
 //require_once ("/home/schueler/propelProjects/vendor/autoload.php");
 //require_once ("/home/schueler/propelProjects/ebookstore/generated-conf/config.php");
 
-// Variablen
+
 
 
 $title = "";

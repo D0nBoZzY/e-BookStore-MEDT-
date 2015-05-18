@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<config>
+    <propel>
+        <database>
+            <connections>
+                <connection id="ebibliothek">
+                    <adapter>mysql</adapter>
+                    <classname>Propel\Runtime\Connection\ConnectionWrapper</classname>
+                    <dsn>mysql:host=localhost;dbname=ebibliothek</dsn>
+                    <user>root</user>
+                    <password></password>
+                </connection>
+            </connections>
+        </database>
+        <runtime>
+            <defaultConnection>ebibliothek</defaultConnection>
+            <connection>ebibliothek</connection>
+        </runtime>
+        <generator>
+            <defaultConnection>ebibliothek</defaultConnection>
+            <connection>ebibliothek</connection>
+        </generator>
+    </propel>
+</config>

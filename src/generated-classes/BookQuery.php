@@ -51,4 +51,23 @@ class BookQuery extends BaseBookQuery
     $file = $book->getPath(); // Pfad zum File am Server
     echo '<a href="'.$file.'">zum Download</a>'; //Ausgabe des Pfades zum File fuer den Download
   }
+
+/*
+Aenderungs-Funktion um Eintraege eines Buches zu aendern
+Autor: sarah kreutzer
+Version: 2015-05-13
+*/
+  function editFromServer($book_id,$title,$author,$genre,$publisher,$language,$content,$year){
+    $book = BookQuery::create()->findOneByBookId($book_id);
+//keine ueberpruefung ob leer oder null notwendig,da dies schon Propel uebernimmt
+      $book->setTitle($title);
+      $book->setAuthor($author);
+      $book->setGenre($genre);
+      $book->setPublisher($publisher);
+      $book->setLanguage($language);
+      $book->setContent($content);
+      $book->setYear($year);
+      echo 'geander!! :D';
+
+  }
 }

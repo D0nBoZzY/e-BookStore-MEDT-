@@ -61,7 +61,7 @@ Aenderungs-Funktion um Eintraege eines Buches zu aendern
 Autor: sarah kreutzer
 Version: 2015-05-13
 */
-  function editFromServer($book_id,$title,$author,$genre,$publisher,$language,$content,$year){
+  function edit($book_id,$title,$author,$genre,$publisher,$language,$content,$year){
     if(BookQuery::create()->findOneByBookId($book_id)){
       $book = BookQuery::create()->findOneByBookId($book_id);
     }else{
@@ -83,26 +83,18 @@ Version: 2015-05-13
       }
   }
 
-<<<<<<< Updated upstream
   /*
   Such-Funktion um Buecher zu suchen
   Return: Buch-Array
   Autor: lzainzinger, sarah kreutzer
   Version: 2015-05-19
   */
-    function search($i){
-      $books = BookQuery::create()->findByTitle($i);
-      $books += BookQuery::create()->findByAuthor($i);
-      $books += BookQuery::create()->findByPublisher($i);
-      $books += BookQuery::create()->findByYear($i);
+  function searchFromServer($i){
+    $books = BookQuery::create()->findByTitle($i);
+    $books += BookQuery::create()->findByAuthor($i);
+    $books += BookQuery::create()->findByPublisher($i);
+    $books += BookQuery::create()->findByYear($i);
 
-      return $books;
-    }
-=======
-
-  function searchFromServer($){
-
+    return $books;
   }
-
->>>>>>> Stashed changes
 }

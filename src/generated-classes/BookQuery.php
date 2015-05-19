@@ -66,6 +66,7 @@ Version: 2015-05-13
       $book->setLanguage($language);
       $book->setContent($content);
       $book->setYear($year);
+      $book->save();
       echo 'geander!! :D';
 
   }

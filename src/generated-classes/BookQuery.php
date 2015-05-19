@@ -77,5 +77,19 @@ Version: 2015-05-13
         echo 'fail,keine Aenderung moeglich';
       }
   }
-  
+
+  /*
+  Such-Funktion um Buecher zu suchen
+  Return: Buch-Array
+  Autor: lzainzinger, sarah kreutzer
+  Version: 2015-05-19
+  */
+    function search($i){
+      $books = BookQuery::create()->findByTitle($i);
+      $books += BookQuery::create()->findByAuthor($i);
+      $books += BookQuery::create()->findByPublisher($i);
+      $books += BookQuery::create()->findByYear($i);
+
+      return $books;
+    }
 }

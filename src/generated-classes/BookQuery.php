@@ -46,8 +46,13 @@ class BookQuery extends BaseBookQuery
     Version: 2015-05-19
   */
   function downloadFromServer($id){
-    $book = BookQuery::create()->findOneByBookId($id);
-    $file = $book->getPath(); // Pfad zum File am Server
+    if(BookQuery::create()->findOneByBookId($id)){
+      $book = BookQuery::create()->findOneByBookId($id);
+      $file = $book->getPath();
+    }else{
+      echo ("ID does not exist!");
+    }
+
     echo '<a href="'.$file.'">zum Download</a>'; //Ausgabe des Pfades zum File fuer den Download
   }
 

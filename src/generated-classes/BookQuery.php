@@ -57,7 +57,11 @@ Autor: sarah kreutzer
 Version: 2015-05-13
 */
   function editFromServer($book_id,$title,$author,$genre,$publisher,$language,$content,$year){
-    $book = BookQuery::create()->findOneByBookId($book_id);
+    if(BookQuery::create()->findOneByBookId($book_id)){
+      $book = BookQuery::create()->findOneByBookId($book_id);
+    }else{
+      echo 'id not found!';
+    }
 //keine ueberpruefung ob leer oder null notwendig,da dies schon Propel uebernimmt
       $book->setTitle($title);
       $book->setAuthor($author);
@@ -66,8 +70,12 @@ Version: 2015-05-13
       $book->setLanguage($language);
       $book->setContent($content);
       $book->setYear($year);
-      $book->save();
-      echo 'geander!! :D';
+      if ($book->save();){
+        $book->save();
+        echo 'geandert';
+      }else{
+        echo 'fail,keine Aenderung moeglich';
+
 
   }
 }

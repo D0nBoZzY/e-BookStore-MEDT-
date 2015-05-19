@@ -75,7 +75,7 @@ Version: 2015-05-13
         echo 'geandert';
       }else{
         echo 'fail,keine Aenderung moeglich';
-
-
+      }
   }
+  
 }

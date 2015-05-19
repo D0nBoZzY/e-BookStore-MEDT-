@@ -75,7 +75,7 @@ Version: 2015-05-13
       $book->setLanguage($language);
       $book->setContent($content);
       $book->setYear($year);
-      if ($book->save();){
+      if ($book->save()){
         $book->save();
         echo 'geandert';
       }else{
@@ -83,6 +83,7 @@ Version: 2015-05-13
       }
   }
 
+<<<<<<< Updated upstream
   /*
   Such-Funktion um Buecher zu suchen
   Return: Buch-Array
@@ -97,4 +98,11 @@ Version: 2015-05-13
 
       return $books;
     }
+=======
+
+  function searchFromServer($){
+
+  }
+
+>>>>>>> Stashed changes
 }

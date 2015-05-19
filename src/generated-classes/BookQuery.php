@@ -17,11 +17,11 @@ class BookQuery extends BaseBookQuery
   /*
     Delete-Funktion um ein File aus dem Server und den dazugehoerigen DB-Eintrag zu loeschen
     Autor: lzainzinger
-    Version: 2015-05-11
+    Version: 2015-05-19
   */
-  function deleteFromServer($title){
-    if(BookQuery::create()->findOneByTitle($title)){
-      $book = BookQuery::create()->findOneByTitle($title);
+  function deleteFromServer($id){
+    if(BookQuery::create()->findOneByBookId($id)){
+      $book = BookQuery::create()->findOneByBookId($id);
       $file = $book->getPath();
     }else{
       echo ("File does not exist!");
@@ -34,20 +34,19 @@ class BookQuery extends BaseBookQuery
     }
     else
     {
-      echo ("Deleted $file"); // Ausgabe wenn Erfolgreich
-
       // Loeschen des Datenbank - Eintrages
-        $book->delete(); // Loeschen DB
+      $book->delete(); // Loeschen DB
+      echo ("Deleted $file"); // Ausgabe wenn Erfolgreich
     }
   }
 
   /*
     Download-Funktion um ein File aus dem Server und den dazugehoerigen DB-Eintrag zu loeschen
     Autor: lzainzinger
-    Version: 2015-05-11
+    Version: 2015-05-19
   */
-  function downloadFromServer($title){
-    $book = BookQuery::create()->findOneByTitle($title);
+  function downloadFromServer($id){
+    $book = BookQuery::create()->findOneByBookId($id);
     $file = $book->getPath(); // Pfad zum File am Server
     echo '<a href="'.$file.'">zum Download</a>'; //Ausgabe des Pfades zum File fuer den Download
   }

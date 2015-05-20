@@ -17,11 +17,11 @@ class BookQuery extends BaseBookQuery
   /*
     Delete-Funktion um ein File aus dem Server und den dazugehoerigen DB-Eintrag zu loeschen
     Autor: lzainzinger
-    Version: 2015-05-11
+    Version: 2015-05-19
   */
-  function deleteFromServer($title){
-    if(BookQuery::create()->findOneByTitle($title)){
-      $book = BookQuery::create()->findOneByTitle($title);
+  function deleteFromServer($id){
+    if(BookQuery::create()->findOneByBookId($id)){
+      $book = BookQuery::create()->findOneByBookId($id);
       $file = $book->getPath();
     }else{
       echo ("File does not exist!");
@@ -34,21 +34,67 @@ class BookQuery extends BaseBookQuery
     }
     else
     {
-      echo ("Deleted $file"); // Ausgabe wenn Erfolgreich
-
       // Loeschen des Datenbank - Eintrages
-        $book->delete(); // Loeschen DB
+      $book->delete(); // Loeschen DB
+      echo ("Deleted $file"); // Ausgabe wenn Erfolgreich
     }
   }
 
   /*
     Download-Funktion um ein File aus dem Server und den dazugehoerigen DB-Eintrag zu loeschen
     Autor: lzainzinger
-    Version: 2015-05-11
+    Version: 2015-05-19
   */
-  function downloadFromServer($title){
-    $book = BookQuery::create()->findOneByTitle($title);
-    $file = $book->getPath(); // Pfad zum File am Server
+  function downloadFromServer($id){
+    if(BookQuery::create()->findOneByBookId($id)){
+      $book = BookQuery::create()->findOneByBookId($id);
+      $file = $book->getPath();
+    }else{
+      echo ("ID does not exist!");
+    }
+
     echo '<a href="'.$file.'">zum Download</a>'; //Ausgabe des Pfades zum File fuer den Download
+  }
+
+/*
+Aenderungs-Funktion um Eintraege eines Buches zu aendern
+Autor: sarah kreutzer
+Version: 2015-05-13
+*/
+  function edit($book_id,$title,$author,$genre,$publisher,$language,$content,$year){
+    if(BookQuery::create()->findOneByBookId($book_id)){
+      $book = BookQuery::create()->findOneByBookId($book_id);
+    }else{
+      echo 'id not found!';
+    }
+//keine ueberpruefung ob leer oder null notwendig,da dies schon Propel uebernimmt
+      $book->setTitle($title);
+      $book->setAuthor($author);
+      $book->setGenre($genre);
+      $book->setPublisher($publisher);
+      $book->setLanguage($language);
+      $book->setContent($content);
+      $book->setYear($year);
+      if ($book->save()){
+        $book->save();
+        echo 'geandert';
+      }else{
+        echo 'fail,keine Aenderung moeglich';
+      }
+  }
+
+  /*
+  Such-Funktion um Buecher zu suchen
+  Return: Buch-Array
+  Autor: lzainzinger, sarah kreutzer
+  Version: 2015-05-19
+  */
+  function searchFromServer($i){
+    $books = BookQuery::create()->findByTitle($i);
+    $books += BookQuery::create()->findByAuthor($i);
+    $books += BookQuery::create()->findByPublisher($i);
+    $books += BookQuery::create()->findByYear($i);
+
+    return $books;
   }
 }

@@ -7,7 +7,7 @@ $client = new Google_Client();
     $client->setDeveloperKey("AIzaSyDz0CnQzPTQN6pu171VvIyCY3ZZ1vuZkPU");  
     $client->setClientId('85666748912-kff12upb0ti7012n2bqq82j9ou1rflbq.apps.googleusercontent.com');
     $client->setClientSecret('3F3mFjPTeDcUNcr7BFYgwgtn');
-    $client->setRedirectUri('http://localhost/e-BookStore-MEDT-/register.php');	//Startseite verlinken
+    $client->setRedirectUri('http://localhost/e-BookStore-MEDT-/google/homepage.php');	//Startseite verlinken
     $client->setScopes(array('https://www.googleapis.com/auth/analytics.readonly'));
 
     //For loging out.

@@ -1,0 +1,36 @@
+body {
+	
+}
+
+a:link,
+a:visited,
+a:active
+{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#page
+{
+    padding-top: 60px;
+}
+
+#footer
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    /* border: thin solid #808080;
+    border-radius: 5px; */
+}               
+
+#heading
+{
+    
+}
+
+#search
+{
+    padding-top: 21px;
+    padding-bottom: 15px;
+}

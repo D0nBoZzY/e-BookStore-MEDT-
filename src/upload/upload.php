@@ -1,27 +1,30 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE);
 ini_set('display_errors', '1');
-require_once ("/home/schueler/propelProjects/vendor/autoload.php");
-require_once ("/home/schueler/propelProjects/ebookstore/generated-conf/config.php");
+// setup the autoloading
+require_once '/home/ubuntu/propel/vendor/autoload.php';
+
+// setup Propel
+require_once '/home/ubuntu/propelprojects/ebookstore/generated-conf/config.php';
 
 //Variablen
 
 
 $title = "";
 $url = "";
-
+$tf =false;
 
 
 /**
  * Erstellt einen neune Eintrag für das hochgeladene Buch in der DB
  * und schreibt auch den Pfad der EPUB Datei in die DB
  */
-function write_in_db($title,$author,$genre,$publisher,$language,$content,$year,$userId) {
-    
+function write_in_db($title,$author,$picture,$publisher,$language,$content,$year,$userId) {
+
     $book = new Book();
     $book->setTitle($title);
     $book->setAuthor($author);
-    $book->setGenre($genre);
+    $book->setPictureUrl($picture);
     $book->setPublisher($publisher);
     $book->setLanguage($language);
     $book->setContent($content);
@@ -29,7 +32,7 @@ function write_in_db($title,$author,$genre,$publisher,$language,$content,$year,$
     $book->setYear($year);
     $book->setUserId($userId);
 
-    $book->save();   
+    $book->save();
 }
 
 /**
@@ -41,16 +44,16 @@ function create_url($AWS_AKI, $AWS_SAK, $AT, $title) {
     $base_url = "http://webservices.amazon.com/onca/xml?";
 
 
-    //ersetzt 
-    $title = str_replace(' ', '%20', $title); 
-    
+    //ersetzt
+    $title = str_replace(' ', '%20', $title);
+
     // Parameter der URL
     $url_params = array('Operation'=>"ItemSearch",'Service'=>"AWSECommerceService",
      'AWSAccessKeyId'=>$AWS_AKI,'AssociateTag'=>$AT,
      'ResponseGroup'=>"Medium",'SearchIndex'=>"Book",'Title'=>$title);
-     
-    
-      
+
+
+
     // Timestamp
     $url_params['Timestamp'] = date("Y-m-d\TH:i:s\Z");
 
@@ -83,26 +86,26 @@ function create_url($AWS_AKI, $AWS_SAK, $AT, $title) {
 
 function create_url2($title, $AT){
       $title = str_replace(' ', '%20', $title);
-     
+
       $url = "http://aws.ocrs.at/request.php?Service=AWSECommerceService&Version=2011-08-01&Operation=ItemSearch&SearchIndex=Books&AssociateTag=twitchtvd4rko-20&IncludeReviewsSummary=no&ResponseGroup=Large&Title=".$title;
-      
-      return $url;    
+
+      return $url;
 }
 if(isset($_POST['upload'])){
     $title = $_POST['title_input'];
     $url = create_url2($title,$ASSOCIATE_TAG);
-    
-    
-    
-    
+
+
+
+
 }
 
 
-    
 
 
 
-?>     
+
+?>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitiona$
@@ -116,41 +119,45 @@ if(isset($_POST['upload'])){
     <meta name="author" content="" />
     <meta name="keywords" content="" />
     <meta name="generator" content="Webocton - Scriptly (www.scriptly.de)" />
-    
-    
+
+
     <link href="style.css" type="text/css" rel="stylesheet" />
     </head>
-    <body> 
-   
-    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <body>
+
+    <script type="text/javascript" src= "jquery-1.11.1.min.js"></script>
     <script type="text/javascript">
 
        var url = "<?php echo $url ?>";
-        
-       
+
+
 
        function write(data){
 
-            var title = get1(data, "Title"); 
+            var title = get1(data, "Title");
             var author = get1(data, "Author");
 
             var publisher = get1(data,"Publisher");
-            var genre ="Thriller";
+            var picture = get2(data,"MediumImage");
             var language = get2(data, "Language");
             var content =  get1(data,"Content");
             var year = get1(data,"PublicationDate");
-            
-            
-            $.post('upload.php',{title:title,author:author,publisher:publisher,genre:genre,language:language,content:content,year:year},
-            function(data){
-                $('#result').html(data);  
-            });
-           
-           
-            
-        
+		    
+	    
 
-           
+	    <?php $tf=true; ?>
+
+
+            $.post('upload.php',{title:title,author:author,publisher:publisher,picture:picture,language:language,content:content,year:year},
+            function(data){
+                $('#result').html(data);
+            });
+
+
+
+
+
+
 
 
         }
@@ -167,8 +174,8 @@ if(isset($_POST['upload'])){
             var get = data.getElementsByTagName(name)[0].firstChild.textContent;
             return get;
         }
-        
-        
+
+
 
 
 
@@ -181,36 +188,39 @@ if(isset($_POST['upload'])){
         });
         });
         </script>
-    
+
         <?php
-        
+
         $title = $_POST['title'];
         $author = $_POST['author'];
         $publisher = $_POST['publisher'];
-        $genre = $_POST['genre'];
+        $picture = $_POST['picture'];
         $language = $_POST['language'];
         $content = $_POST['content'];
         $year = $_POST['year'];
-        
-        write_in_db($title,$author,$genre,$publisher,$language,$content,$year,1);
-        
-        
-        
-        
-        
+	if($tf==true){
+	   if($title!=''){
+	   
+	      write_in_db($title,$author,$picture,$publisher,$language,$content,$year,2);
+	      $tf=false;
+	   }
+        }
+
+
+
+
         ?>
-     <div id ="result">         
+     <div id ="result">
     <form action="upload.php" method="post" enctype="multipart/form-data">
         Set a Title:
-        <input type="text" name="title_input" class="input_text" value="Harry Potter and the chamber of secrets"/><br />
+        <input type="text" name="title_input" class="input_text" value=""/><br />
         Select a book to upload:
         <input type="file" name="fileToUpload" id="fileToUpload" />
-        <input type="submit" value="Upload Book" name="upload"/> 
-        
+        <input type="submit" value="Upload Book" name="upload"/>
+
     </form>
-    </div> 
-    
+    </div>
+
 </body>
 </html>
-
 

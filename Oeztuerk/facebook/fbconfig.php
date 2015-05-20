@@ -15,8 +15,8 @@ use Facebook\HttpClients\FacebookCurlHttpClient;
 use Facebook\HttpClients\FacebookHttpable;
 // init app with app id and secret
 FacebookSession::setDefaultApplication( '967311029975943','219f83a616ab9010b6771cb807d1cb3c' );
-// login helper with redirect_uri
-$helper = new FacebookRedirectLoginHelper('http://localhost/e-BookStore-MEDT-/facebook/fbconfig.php' );
+// Startseite verlinken
+$helper = new FacebookRedirectLoginHelper('http://localhost/e-BookStore-MEDT-/facebook/index.php' );
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {

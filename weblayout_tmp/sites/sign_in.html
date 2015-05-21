@@ -3,29 +3,29 @@
 
 <head>
     <title>e-Library</title>
-        
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="startpage_layout for e-library" />
     <meta name="author" content="schwarz stephan" />
     <meta name="keywords" content="" />
     <meta name="generator" content="Webocton - Scriptly (www.scriptly.de)" />
-    
+
     <!-- css -->
-    <link href="styles/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="styles/00_start.css" rel="stylesheet" type="text/css" />
-        
+    <link href="../styles/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/00_start.css" rel="stylesheet" type="text/css" />
+
     <!-- jquery.js and bootstrap.js -->
-    <script language="javascript" type="text/javascript" src="includes/jquery.js"></script>
-    <script language="javascript" type="text/javascript" src="includes/bootstrap.js"></script>
+    <script language="javascript" type="text/javascript" src="../includes/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="../includes/bootstrap.js"></script>
 </head>
 
 <body>
     <div class="container" id="page">
-    
-        
+
+
         <div class="navbar navbar-inverse navbar-fixed-top" id="header">
             <div class="container">
-    
+
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -34,11 +34,11 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">
-                        <img alt="Brand" src="img/logo_tmp.ico"/>
+                        <img alt="Brand" src="../img/logo_tmp.ico"/>
                         e-Library
                     </a>
                 </div>
-    
+
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
@@ -46,24 +46,47 @@
                         <li><a href="#">Authors</a></li>
                         <li><a href="#">All Books</a></li>
                     </ul>
-    
+
                     <form class="navbar-form navbar-right" action="">
-                        <button type="submit" class="btn btn-success" name="log_btn">Logout</button>
+                        <div class="form-group">
+                            <input type="text" placeholder="Username" class="form-control" />
+                            <input type="password" placeholder="Password" class="form-control" />
+                            <a href="sign_up.html" class="navbar-link">?</a>
+                        </div>
+                        <button type="submit" class="btn btn-success" name="log_btn">Sign in</button>
                     </form>
-                    <p class="navbar-text navbar-right" style="font-size: 14px;">Signed in as <a href="#" class="navbar-link">Peter Enis</a></p>
                 </div>
             </div>
         </div>
         <!-- content -->
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+        <!-- page heading -->
+        <div class="col-md-12" id="heading">
+        <h1>Sign Up</h1>
+        </div>
+
+
+        <div class="col-md-12">
+            <form>
+            	<div class="form-group">
+            		<input type="text" class="form-control input-lg" placeholder="Username" />
+            	</div>
+                <div class="form-group">
+            		<input type="text" class="form-control input-lg" placeholder="e-mail" />
+            	</div>
+                <div class="form-group">
+            		<input type="password" class="form-control input-lg" placeholder="Password"/>
+                </div>
+                <div class="form-group">
+            		<input type="password" class="form-control input-lg" placeholder="Retype Password"/>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg" id="btn_reg">Sign Up</button>
+            </form>
+        </div>
+
+
+
+
         <!-- /content -->
         
         <!-- seperate -->
@@ -72,8 +95,8 @@
         <div class="footer">
             <p id="footer">&copy; e-Library</p>
         </div>
-    
-    
+
+
     </div>
 </body>
-</html>                                
+</html>

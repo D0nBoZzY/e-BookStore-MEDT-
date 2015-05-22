@@ -6,7 +6,6 @@ a:link,
 a:visited,
 a:active
 {
-    color: #FFFFFF;
     text-decoration: none;
 }
 
@@ -24,13 +23,34 @@ a:active
     border-radius: 5px; */
 }               
 
-#heading
-{
-    
-}
-
 #search
 {
     padding-top: 21px;
     padding-bottom: 15px;
+}
+
+#heading
+{
+
+}
+
+#subheading
+{
+    border-bottom: thin solid #EDEDED;
+}
+
+#nav-cat
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#nav-auth
+{
+    
+}
+
+#nav-books
+{
+
 }

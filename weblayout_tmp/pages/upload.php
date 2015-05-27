@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require_once ("/home/schueler/propelProjects/vendor/autoload.php");
-require_once ("/home/schueler/propelProjects/ebookstore/generated-conf/config.php");
+require_once ("/home/schueler/propelProjects/weblayout_tmp/generated-conf/config.php");
 
 // Variablen
 $AWS_ACCESS_KEY_ID = "AKIAJVM5HKLGATQIH3GQ";

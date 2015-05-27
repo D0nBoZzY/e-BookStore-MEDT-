@@ -41,7 +41,7 @@ if(isset($_POST['log_btn'])) {
 		}
 	}else{
 		//Es wurde kein Benutzer mit dem Namen $user gefunden
-		$error = "User not yet Registred";
+		$error = "User not yet Registered";
 		//$usernotfound=true;
 	}
  }

@@ -8,12 +8,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="?page=home">
-                        <img alt="Brand" src="img/logo_tmp.ico"/>
-                        e-Library
-                    </a>
+                     
                 </div>
-
+                <div>
+                <a class="navbar-brand" href="?page=home">
+                        <img width="25%" alt="Brand" src="img/logo_tmp.ico"/>
+                        e-Library
+                  </a>
+                </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="?page=home">Home</a></li>

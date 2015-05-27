@@ -24,7 +24,7 @@
     
         <!-- header -->
         <div id="navbar">
-            {include file="navbar.tpl"}
+	{include file="navbar.tpl"}
         </div>
 
         <!-- content -->

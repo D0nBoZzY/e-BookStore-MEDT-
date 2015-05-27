@@ -1,4 +1,29 @@
-<div class="navbar navbar-inverse navbar-fixed-top" id="header">
+<?php /* Smarty version Smarty-3.1.17, created on 2015-05-25 12:35:11
+         compiled from "sites/navbar.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:19659375635560a055aa0136-56051661%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'af9dde1bc82812f79f3bf4c4e9b09fd5a23180f5' => 
+    array (
+      0 => 'sites/navbar.tpl',
+      1 => 1432550054,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '19659375635560a055aa0136-56051661',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_5560a055aa2623_80689426',
+  'variables' => 
+  array (
+    'error' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5560a055aa2623_80689426')) {function content_5560a055aa2623_80689426($_smarty_tpl) {?><div class="navbar navbar-inverse navbar-fixed-top" id="header">
             <div class="container">
 
                 <div class="navbar-header">
@@ -17,7 +42,8 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="?page=home">Home</a></li>
-			<!-- <li><a href="?page=signup">{$error}</a></li> -->
+			<!-- <li><a href="?page=signup"><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+</a></li> -->
                 	<li><a href="?page=categories">Categories</a></li>
                 	<li><a href="?page=authors">Authors</a></li>
                 	<li><a href="?page=allbooks">All Books</a></li>
@@ -38,3 +64,4 @@
                 </div>
             </div>
         </div>
+<?php }} ?>

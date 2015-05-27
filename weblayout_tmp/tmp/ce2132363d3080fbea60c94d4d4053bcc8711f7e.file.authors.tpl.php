@@ -1,6 +1,27 @@
-    <!-- page heading -->
+<?php /* Smarty version Smarty-3.1.17, created on 2015-05-25 13:01:15
+         compiled from "sites/authors.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:584999735560d3ba07a732-75595583%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'ce2132363d3080fbea60c94d4d4053bcc8711f7e' => 
+    array (
+      0 => 'sites/authors.tpl',
+      1 => 1432551672,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '584999735560d3ba07a732-75595583',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_5560d3ba082089_62982527',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5560d3ba082089_62982527')) {function content_5560d3ba082089_62982527($_smarty_tpl) {?>    <!-- page heading -->
     <div class="col-md-8" id="heading">    
-        <h1>Your Books</h1>
+        <h1>Authors</h1>
     </div>
     <!-- search bar -->
     <div class="col-md-4">
@@ -16,22 +37,40 @@
     <div class="col-md-12"><hr /></div>
     
     <!-- navigation -->
-    <div class="col-md-12" id="nav-books">
+    <div class="col-md-10 col-md-offset-1" id="nav-auth">
         <nav>
-            <ul class="pager">
-                <li class="previous"><a href="?page=allbooks&site=prev"><span aria-hidden="true">&larr;</span> Previous</a></li>
-                <li class="active"><a href="?page=allbooks&site=1">1 <span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="?page=allbooks&site=2">2 <span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="?page=allbooks&site=3">3 <span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="?page=allbooks&site=4">4 <span class="sr-only">(current)</span></a></li>
-                <li class="active">... <span class="sr-only">(current)</span></li>
-                <li class="active"><a href="?page=allbooks&site=last">57 <span class="sr-only">(current)</span></a></li>
-                <li class="next"><a href="?page=allbooks&site=next">Next <span aria-hidden="true">&rarr;</span></a></li>
+            <ul class="pagination">
+                <li><a href="?page=authors&sort=a">A</a></li>
+                <li><a href="?page=authors&sort=b">B</a></li>
+                <li><a href="?page=authors&sort=c">C</a></li>
+                <li><a href="?page=authors&sort=d">D</a></li>
+                <li><a href="?page=authors&sort=e">E</a></li>
+                <li><a href="?page=authors&sort=f">F</a></li>
+                <li><a href="?page=authors&sort=g">G</a></li>
+                <li><a href="?page=authors&sort=h">H</a></li>
+                <li><a href="?page=authors&sort=i">I</a></li>
+                <li><a href="?page=authors&sort=j">J</a></li>
+                <li><a href="?page=authors&sort=k">K</a></li>
+                <li><a href="?page=authors&sort=l">L</a></li>
+                <li><a href="?page=authors&sort=m">M</a></li>
+                <li><a href="?page=authors&sort=n">N</a></li>
+                <li><a href="?page=authors&sort=o">O</a></li>
+                <li><a href="?page=authors&sort=p">P</a></li>
+                <li><a href="?page=authors&sort=q">Q</a></li>
+                <li><a href="?page=authors&sort=r">R</a></li>
+                <li><a href="?page=authors&sort=s">S</a></li>
+                <li><a href="?page=authors&sort=t">T</a></li>
+                <li><a href="?page=authors&sort=u">U</a></li>
+                <li><a href="?page=authors&sort=v">V</a></li>
+                <li><a href="?page=authors&sort=w">W</a></li>
+                <li><a href="?page=authors&sort=x">X</a></li>
+                <li><a href="?page=authors&sort=y">Y</a></li>
+                <li><a href="?page=authors&sort=z">Z</a></li>
             </ul>
         </nav>
     </div>
     
-    <!-- content -->    
+    <!-- books -->    
     <div class="row">
         <div class="col-md-4">
             <h3>Book1</h3>
@@ -80,4 +119,5 @@
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
             <p><a class="btn btn-primary" href="#" >View details &raquo;</a></p>
         </div>
-    </div>                         
+    </div>
+<?php }} ?>

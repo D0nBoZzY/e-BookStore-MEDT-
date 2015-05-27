@@ -19,33 +19,33 @@
     <div class="col-md-10 col-md-offset-1" id="nav-auth">
         <nav>
             <ul class="pagination">
-                <li class="active"><a href="#">A <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">B <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">C <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">D <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">E <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">F <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">G <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">H <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">I <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">J <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">K <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">L <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">M <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">N <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">O <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">P <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Q <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">R <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">S <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">T <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">U <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">V <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">W <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">X <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Y <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Z <span class="sr-only">(current)</span></a></li>
-                </ul>
+                <li><a href="?page=authors&sort=a">A</a></li>
+                <li><a href="?page=authors&sort=b">B</a></li>
+                <li><a href="?page=authors&sort=c">C</a></li>
+                <li><a href="?page=authors&sort=d">D</a></li>
+                <li><a href="?page=authors&sort=e">E</a></li>
+                <li><a href="?page=authors&sort=f">F</a></li>
+                <li><a href="?page=authors&sort=g">G</a></li>
+                <li><a href="?page=authors&sort=h">H</a></li>
+                <li><a href="?page=authors&sort=i">I</a></li>
+                <li><a href="?page=authors&sort=j">J</a></li>
+                <li><a href="?page=authors&sort=k">K</a></li>
+                <li><a href="?page=authors&sort=l">L</a></li>
+                <li><a href="?page=authors&sort=m">M</a></li>
+                <li><a href="?page=authors&sort=n">N</a></li>
+                <li><a href="?page=authors&sort=o">O</a></li>
+                <li><a href="?page=authors&sort=p">P</a></li>
+                <li><a href="?page=authors&sort=q">Q</a></li>
+                <li><a href="?page=authors&sort=r">R</a></li>
+                <li><a href="?page=authors&sort=s">S</a></li>
+                <li><a href="?page=authors&sort=t">T</a></li>
+                <li><a href="?page=authors&sort=u">U</a></li>
+                <li><a href="?page=authors&sort=v">V</a></li>
+                <li><a href="?page=authors&sort=w">W</a></li>
+                <li><a href="?page=authors&sort=x">X</a></li>
+                <li><a href="?page=authors&sort=y">Y</a></li>
+                <li><a href="?page=authors&sort=z">Z</a></li>
+            </ul>
         </nav>
     </div>
     
@@ -98,4 +98,4 @@
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
             <p><a class="btn btn-primary" href="#" >View details &raquo;</a></p>
         </div>
-    </div>                         
+    </div>

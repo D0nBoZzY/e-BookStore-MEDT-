@@ -1,4 +1,25 @@
-    <!-- page heading -->
+<?php /* Smarty version Smarty-3.1.17, created on 2015-05-27 10:46:02
+         compiled from "sites/allbooks.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:20979054345560d3c1e57071-42152344%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '36db12d37af8d0476b3e874dce163e7de86ea8e9' => 
+    array (
+      0 => 'sites/allbooks.tpl',
+      1 => 1432716338,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '20979054345560d3c1e57071-42152344',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_5560d3c1e61b17_85658366',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5560d3c1e61b17_85658366')) {function content_5560d3c1e61b17_85658366($_smarty_tpl) {?>    <!-- page heading -->
     <div class="col-md-8" id="heading">    
         <h1>Your Books</h1>
     </div>
@@ -81,3 +102,4 @@
             <p><a class="btn btn-primary" href="#" >View details &raquo;</a></p>
         </div>
     </div>                         
+<?php }} ?>

@@ -1,0 +1,56 @@
+body {
+	
+}
+
+a:link,
+a:visited,
+a:active
+{
+    text-decoration: none;
+}
+
+#page
+{
+    padding-top: 60px;
+}
+
+#footer
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    /* border: thin solid #808080;
+    border-radius: 5px; */
+}               
+
+#search
+{
+    padding-top: 21px;
+    padding-bottom: 15px;
+}
+
+#heading
+{
+
+}
+
+#subheading
+{
+    border-bottom: thin solid #EDEDED;
+}
+
+#nav-cat
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#nav-auth
+{
+    
+}
+
+#nav-books
+{
+
+}

@@ -1,0 +1,84 @@
+<?php /* Smarty version Smarty-3.1.17, created on 2015-05-22 18:16:40
+         compiled from "sites\home.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:11811555f4d943f14b5-51863720%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '746bff73745e2f1058cfbe33914c861daa3df1ae' => 
+    array (
+      0 => 'sites\\home.tpl',
+      1 => 1432311399,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '11811555f4d943f14b5-51863720',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_555f4d943f5190_42100382',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_555f4d943f5190_42100382')) {function content_555f4d943f5190_42100382($_smarty_tpl) {?>    <!-- page heading -->
+    <div class="col-md-8" id="heading">    
+        <h1>Books</h1>
+    </div>
+    <!-- search bar -->
+    <div class="col-md-4">
+        <div class="input-group" id="search">
+            <input type="text" class="form-control" value="Search for..." onclick="this.select()" />
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+            </div>
+        </div>
+    </div>                                                                                                                                                       
+        
+        
+    <!-- seperate -->
+    <div class="col-md-12"><hr /></div>
+    
+
+    <!-- content -->    
+    <div class="row">
+        <div class="col-md-12" id="subheading">
+            <h3>Currently Reading:</h3>
+        </div>
+        <div class="col-md-6">
+            <h4>Book</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-6">
+            <h4>Book</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
+        </div>
+        
+        <div class="col-md-12" id="subheading">
+            <h3>Favorites:</h3>
+        </div>	
+        <div class="col-md-6">
+            <h4>Book</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-6">
+            <h4>Book</h4>                                                      
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
+        </div>
+        
+        <div class="col-md-12" id="subheading">
+            <h3>Currently Hot:</h3>
+        </div>    
+        <div class="col-md-6">
+            <h4>Book</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-6">
+            <h4>Book</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
+        </div>
+    </div>                         <?php }} ?>

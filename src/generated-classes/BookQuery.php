@@ -1,6 +1,7 @@
 <?php
 
 use Base\BookQuery as BaseBookQuery;
+use Propel\Runtime\Propel;
 
 /**
  * Skeleton subclass for performing query and update operations on the 'book' table.
@@ -84,17 +85,20 @@ Version: 2015-05-13
   }
 
   /*
+  Diese Methode funktioniert nicht. Er befuellt zwar rs aber gibt kein Array zurueck
   Such-Funktion um Buecher zu suchen
   Return: Buch-Array
   Autor: lzainzinger, sarah kreutzer
   Version: 2015-05-19
-  */
-  function searchFromServer($i){
-    $books = BookQuery::create()->findByTitle($i);
-    $books += BookQuery::create()->findByAuthor($i);
-    $books += BookQuery::create()->findByPublisher($i);
-    $books += BookQuery::create()->findByYear($i);
 
-    return $books;
+  function search($i){
+    $con = Propel::getWriteConnection(\Map\BookTableMap::DATABASE_NAME);
+    $sql = "SELECT * FROM book WHERE title LIKE '%$i%';";
+    $stmt = $con->prepare($sql);
+    $rs=$stmt->executeQuery();
+
+    return $rs;
   }
+  */
+
 }

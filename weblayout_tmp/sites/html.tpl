@@ -26,7 +26,7 @@
         <div id="navbar">
 	{include file="navbar.tpl"}
         </div>
-
+         
         <!-- content -->
         {include file=$pagetpl}        
         

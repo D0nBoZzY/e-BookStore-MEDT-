@@ -1,0 +1,70 @@
+<database name="ebookstore" defaultIdMethode="native">
+    <table name="user" phpName="User">
+        <column name="user_id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        
+        <column name="name" type="varchar" size="150" required="true" />
+        <column name="pw" type="varchar" size="30" required="true" />
+        <column name="role" type="tinyint" required="true" />
+    </table>
+    <table name="book" phpName="Book">
+        <column name="book_id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+         
+        <column name="title" type="varchar" size="255" required="true" />
+        <column name="author" type="varchar" size="255" required="true" />
+        <column name="genre" type="varchar" size="255" required="true" />
+        <column name="publisher" type="varchar" size="255" required="true" />
+        <column name="language" type="varchar" size="255" required="true" />
+        <column name="content" type="varchar" size="255" required="true" />
+        <column name="path" type="varchar" size="255" required="true" />
+        <column name="year" type="date" required="true" />
+        <column name="user_id" type="integer" required="true" />
+        
+        <foreign-key foreignTable="user" phpName="User" refPhpName="Book_user">
+            <reference local="user_id" foreign="user_id" />
+        </foreign-key>
+    </table>
+    <table name="comment" phpName="Comment">
+        <column name="comment_id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="user_id" type="integer" required="true" primaryKey="true" />
+        <column name="book_id" type="integer" required="true" primaryKey="true" />
+        
+        <column name="titel" type="varchar" size="150" required="true" />
+        <column name="date" type="date" required="true" />
+        <column name="text" type="varchar" size="255" required="true" />
+        
+        <foreign-key foreignTable="user" phpName="User" refPhpName="Comment_user">
+            <reference local="user_id" foreign="user_id" />
+        </foreign-key>
+        <foreign-key foreignTable="book" phpName="Book" refPhpName="Comment_book">
+            <reference local="book_id" foreign="book_id" />
+        </foreign-key>
+    </table>
+    <table name="rating" phpName="Rating">
+        <column name="user_id" type="integer" required="true" primaryKey="true" />
+        <column name="book_id" type="integer" required="true" primaryKey="true" />
+        
+        <column name="rating" type="tinyint" required="true" />
+        
+        <foreign-key foreignTable="user" phpName="User" refPhpName="Rating_user">
+            <reference local="user_id" foreign="user_id" />
+        </foreign-key>
+        <foreign-key foreignTable="book" phpName="Book" refPhpName="Rating_book">
+            <reference local="book_id" foreign="book_id" />
+        </foreign-key>
+    </table>
+    <table name="read" phpName="Read">
+        <column name="user_id" type="integer" required="true" primaryKey="true" />
+        <column name="book_id" type="integer" required="true" primaryKey="true" />
+        
+        <column name="bookmark" type="integer" required="true" />
+        
+        <foreign-key foreignTable="user" phpName="User" refPhpName="Read_user">
+            <reference local="user_id" foreign="user_id" />
+        </foreign-key>
+        <foreign-key foreignTable="book" phpName="Book" refPhpName="Read_book">
+            <reference local="book_id" foreign="book_id" />
+        </foreign-key>
+    </table>
+</database>
+    
+    

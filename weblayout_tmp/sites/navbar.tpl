@@ -12,9 +12,7 @@
                 </div>
                 <div>
                 <a class="navbar-brand" href="?page=home">
-                        <img width="25%" alt="Brand" src="img/logo_tmp.ico"/>
-                        e-Library
-                  </a>
+                        <img height= "16" width = "16" alt="Brand" src="img/logo_tmp.ico"/>e-Library</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -35,7 +33,7 @@
                         <div class="form-group">
                             <a href="?page=signup" class="navbar-link">?</a>
                             <input type="submit" name="log_btn" class="btn btn-success" value="Sign In">
-			</div>
+			            </div>
                     </form>
                 </div>
             </div>

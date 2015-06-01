@@ -60,11 +60,22 @@ if (isset($_POST['reg_btn'])) {
 				//mehr als 6 zeichen hat
 				//und Bname mehr als 4 Zeichen
 				if (strlen($pw1) > 6 && strlen($pw1) > 4)  {
-				//Benutzer wird registriert in DB
-				Benutzer_registrieren($bname, $pw1);
-				//Nachdem der Benutzer erfolgreich registriert
-				//wurde wird er auf die naechste Seite geschickt.
-				header('location: erfolgreich_reg.html');
+				
+				$regexp = "/^[a-zA-Z0-9]*$/";
+
+				if (preg_match($regexp, $bname)) {
+					//Benutzer wird registriert in DB
+					Benutzer_registrieren($bname, $pw1);
+					//Nachdem der Benutzer erfolgreich registriert
+					//wurde wird er auf die naechste Seite geschickt.
+					header('location: erfolgreich_reg.html');
+				} else {
+					//Hinweismeldung ausgeben das die Eingaben
+					//auf die Richtlinien angepasst werden.
+					$Hm = "Nur Buchstaben und Zahlen<br>";
+					session_destroy();
+					include 'form.html';
+				}
 				} else {
 					//Hinweismeldung ausgeben das die Eingaben
 					//auf die Richtlinien angepasst werden.
@@ -99,6 +110,7 @@ if (isset($_POST['reg_btn'])) {
 //trotzdem includet werden
 	include 'form.html';
 }
+
 
 
 ?>

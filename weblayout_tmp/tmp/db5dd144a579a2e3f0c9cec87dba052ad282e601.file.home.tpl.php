@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2015-05-23 17:44:21
+<?php /* Smarty version Smarty-3.1.17, created on 2015-05-29 15:47:05
          compiled from "sites/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5254145175560a055aa39c2-25026620%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'db5dd144a579a2e3f0c9cec87dba052ad282e601' => 
     array (
       0 => 'sites/home.tpl',
-      1 => 1432395684,
+      1 => 1432907094,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.17',
   'unifunc' => 'content_5560a055aa5855_75993892',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5560a055aa5855_75993892')) {function content_5560a055aa5855_75993892($_smarty_tpl) {?>    <!-- page heading -->
     <div class="col-md-8" id="heading">    
@@ -80,5 +80,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <h4>Book</h4>
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
             <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
+        </div>
+        
+        <div id="buchtext">
+			<a href = "?page=buchmelden"> buch melden </a>
         </div>
     </div>                         <?php }} ?>

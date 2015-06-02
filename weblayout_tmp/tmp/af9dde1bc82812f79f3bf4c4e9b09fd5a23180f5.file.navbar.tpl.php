@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2015-05-25 12:35:11
+<?php /* Smarty version Smarty-3.1.17, created on 2015-05-29 15:47:05
          compiled from "sites/navbar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19659375635560a055aa0136-56051661%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'af9dde1bc82812f79f3bf4c4e9b09fd5a23180f5' => 
     array (
       0 => 'sites/navbar.tpl',
-      1 => 1432550054,
+      1 => 1432907094,
       2 => 'file',
     ),
   ),
@@ -34,11 +34,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="?page=home">
-                        <img alt="Brand" src="img/logo_tmp.ico"/>
-                        e-Library
-                    </a>
+                        <img height= "16" width = "16" alt="Brand" src="img/logo_tmp.ico"/>e-Library</a>         
                 </div>
-
+                
+                
+                
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="?page=home">Home</a></li>
@@ -59,7 +59,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <div class="form-group">
                             <a href="?page=signup" class="navbar-link">?</a>
                             <input type="submit" name="log_btn" class="btn btn-success" value="Sign In">
-			</div>
+			            </div>
                     </form>
                 </div>
             </div>

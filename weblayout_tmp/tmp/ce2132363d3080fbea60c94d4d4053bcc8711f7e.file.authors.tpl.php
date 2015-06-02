@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2015-05-25 13:01:15
+<?php /* Smarty version Smarty-3.1.17, created on 2015-05-29 15:19:10
          compiled from "sites/authors.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:584999735560d3ba07a732-75595583%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ce2132363d3080fbea60c94d4d4053bcc8711f7e' => 
     array (
       0 => 'sites/authors.tpl',
-      1 => 1432551672,
+      1 => 1432904558,
       2 => 'file',
     ),
   ),

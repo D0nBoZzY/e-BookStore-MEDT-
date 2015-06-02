@@ -1,5 +1,5 @@
 <?php
-//damit das PHP am Server eine Session anlegt damit wir was einspeichern können
+//damit das PHP am Server eine Session anlegt damit wir was einspeichern kÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶nnen
 //session_start();
 
 // setup the autoloading
@@ -15,7 +15,7 @@ function login($uname, $pw) {
 }
 
 if(isset($_POST['log_btn'])) {
-	//Das was wir im Post haben, haben wir in diese Variablen gegeben, dass wir das nicht jedes mal schreiben müssen
+	//Das was wir im Post haben, haben wir in diese Variablen gegeben, dass wir das nicht jedes mal schreiben mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ssen
 	$uname = $_POST['uname'];
 	$pw = $_POST['pw'];
 
@@ -25,14 +25,16 @@ if(isset($_POST['log_btn'])) {
 
 	if(!is_null($user)){
 		if ($user->getPw() == $pw){
-			//Daten korrekt, Login wird ausgeführt
+			$loggedin = 1;
+
+			//Daten korrekt, Login wird ausgefÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼hrt
 			//Um zu zeigen welcher Benutzer eingeloggt ist speichern wir den Benutzer in die Session
-			//Damit wir das Objekt speichern künnen müssen wir serealisieren. Speichert Benutzername, Passwort und Klasse ab 
+			//Damit wir das Objekt speichern kÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼nnen mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¼ssen wir serealisieren. Speichert Benutzername, Passwort und Klasse ab
 			$_SESSION['user'] = serialize($user);
 			//Verweis auf das File
-			header('Location: EBiblio_Hauptseite.php');
+			header("Refresh: 10; URL=?page=allbooks");
 			//beenden
-			die();
+			//die();
 			//$navbar = "navbar_li";
 		}else{
 			//Das Passwort passt nicht zum Benutzer
@@ -45,4 +47,5 @@ if(isset($_POST['log_btn'])) {
 		//$usernotfound=true;
 	}
  }
+
 ?>

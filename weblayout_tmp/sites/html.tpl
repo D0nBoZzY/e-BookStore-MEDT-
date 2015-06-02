@@ -24,7 +24,9 @@
     
         <!-- header -->
         <div id="navbar">
-	{include file="navbar.tpl"}
+	{if $loggedin == 0}{include 'navbar.tpl'}{/if}
+	{if $loggedin == 1}{include 'navbar_logged_in_tmp.tpl'}{/if}
+	{if $error != ''}{$error}{/if}
         </div>
          
         <!-- content -->

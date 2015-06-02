@@ -14,16 +14,16 @@ if (isset($_POST['send'])) {
 	$antw3 = '';
 	$antw4 = '';
 	if (isset($_POST['opt1'])){
-	$antw1 = 'Report illegal or inappropriate content <br />';
+	   $antw1 = 'Report illegal or inappropriate content <br />';
 	}
 	if (isset($_POST['opt2'])){
-	$antw2 = 'Book Description does not correspond to the book content <br />';
+	   $antw2 = 'Book Description does not correspond to the book content <br />';
 	}
 	if (isset($_POST['opt3'])){
-	$antw3 = 'The content is displayed incorrectly <br />';
+	   $antw3 = 'The content is displayed incorrectly <br />';
 	}
 	if (isset($_POST['opt4'])){
-	$antw4 = 'Unfitting picture to the book <br />';
+	   $antw4 = 'Unfitting picture to the book <br />';
 	}
 	if ((empty($_POST['message'])) && (!isset($_POST['opt1'])) && (!isset($_POST['opt2'])) && (!isset($_POST['opt3'])) && (!isset($_POST['opt4']))) {
 			$err .= 'Please select an anwser or enter a messege!' . "<br>\n";
@@ -34,8 +34,10 @@ if (isset($_POST['send'])) {
 			header("Refresh: 2; URL=?page=home");
 		}		
 
-	$id = 10; //user id; hier nur als beispiel; MUSS NOCH GESETZT WERDEN
-		if($work){
+	//$userQ = new UserQuery();
+	//$id = $userQ->findOneById($uname); 
+	$id = 10;	     //user id; hier nur als beispiel; MUSS NOCH GESETZT WERDEN
+        if($work){
 	$headers = 'From User ID: '.$id . "\r\n" .
 	'Reply-To: 4yhit@student.tgm.ac.at' . "\r\n" .
 	'X-Mailer: PHP/' . phpversion();

@@ -9,9 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-                <img alt="Brand" src="img/logo_tmp.ico"/>
-                e-Library
-            </a>
+               <img height= "16" width = "16" alt="Brand" src="img/logo_tmp.ico"/>e-Library</a>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -23,9 +21,9 @@
             </ul>
 
             <form class="navbar-form navbar-right" action="">
-                <button type="submit" class="btn btn-success" name="log_btn">Logout</button>
+                <button type="submit" class="btn btn-success1" name="logout_btn">Logout</button>
             </form>
-            <p class="navbar-text navbar-right" style="font-size: 14px;">Signed in as <a href="#" class="navbar-link">Peter Enis</a></p>
+            <p class="navbar-text navbar-right" style="font-size: 14px;">Signed in as <a href="#" class="navbar-link">Beispiel</a></p>
         </div>
         
     </div>

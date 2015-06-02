@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2015-05-25 12:35:11
+<?php /* Smarty version Smarty-3.1.17, created on 2015-05-29 15:47:05
          compiled from "sites/html.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:18908566675560a055a765b1-51583070%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ad54feae093bd2634c5f8388035e47f757e60f56' => 
     array (
       0 => 'sites/html.tpl',
-      1 => 1432550109,
+      1 => 1432907094,
       2 => 'file',
     ),
   ),
@@ -19,6 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5560a055a9ce08_08680152',
   'variables' => 
   array (
+    'error' => 0,
     'pagetpl' => 0,
   ),
   'has_nocache_code' => false,
@@ -51,8 +52,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div id="navbar">
 	<?php echo $_smarty_tpl->getSubTemplate ("navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
+	<?php if ($_smarty_tpl->tpl_vars['error']->value!='') {?><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+<?php }?>
         </div>
-
+         
         <!-- content -->
         <?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['pagetpl']->value, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
         

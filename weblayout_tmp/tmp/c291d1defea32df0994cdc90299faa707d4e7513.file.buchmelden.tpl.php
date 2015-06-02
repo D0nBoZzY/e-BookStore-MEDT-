@@ -1,4 +1,30 @@
-    <!-- page heading -->
+<?php /* Smarty version Smarty-3.1.17, created on 2015-05-28 10:06:09
+         compiled from "sites/buchmelden.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:138743520055660c955fd257-81316163%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'c291d1defea32df0994cdc90299faa707d4e7513' => 
+    array (
+      0 => 'sites/buchmelden.tpl',
+      1 => 1432800366,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '138743520055660c955fd257-81316163',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_55660c95601f85_29303091',
+  'variables' => 
+  array (
+    'err' => 0,
+    'endingmessage' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_55660c95601f85_29303091')) {function content_55660c95601f85_29303091($_smarty_tpl) {?>    <!-- page heading -->
     <div class="col-md-12" id="heading">
         <h1>Report a Problem</h1>
     </div>
@@ -45,14 +71,15 @@
 					</td></tr>
 
 					<tr><td align="center"><br />
-					{if $err != ""}{$err}{/if}</td>
-
+					<?php if ($_smarty_tpl->tpl_vars['err']->value!='') {?><?php echo $_smarty_tpl->tpl_vars['err']->value;?>
+<?php }?></td>
 					</tr>
 
 					<tr><td align="center"><br />
 					<input type="submit" name="send" value="send" class="inputs_send" />
-					<br /><br /> {if $endingmessage != ""}{$endingmessage}{/if}
+					<br /><br /> <?php if ($_smarty_tpl->tpl_vars['endingmessage']->value!='') {?><?php echo $_smarty_tpl->tpl_vars['endingmessage']->value;?>
+<?php }?>
 				</form>
 				</td></tr>
 			</table>
-        </div>   
+        </div>   <?php }} ?>

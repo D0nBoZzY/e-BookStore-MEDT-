@@ -7,10 +7,8 @@ require_once '/vendor/autoload.php';
 
 // setup Propel
 require_once '/generated-conf/config.php';
-function Benutzer_login($bname,$pw) {
-//erstellen ein Objekt dieser Klasse um auf die Methoden zuzugreifen
-$userq = new UserQuery();
-}
+
+require_once 'login.fnc.php';
 
 if(isset($_POST['log_btn'])) {
 
@@ -18,24 +16,26 @@ if(isset($_POST['log_btn'])) {
 	$username = $_POST['log_bname'];
 	$passwort = $_POST['log_pw'];
 	
-//Wir suchen den Benutzer mit dem Namen $username aus der Datenbank
-	$userQ = new UserQuery();
-	$user = $userQ->findOneByBenutzername($username);
+	//rufen die Funktion aus dem File login.fnc.php aus
+	$status = Benutzer_Login($username,$passwort);
 	
-	if(!is_null($user)){
-		if ($user->getPasswort() == $passwort){
+	//is_a prüft ob das Objekt von dieser Klasse ist
+	if (is_a($status,'User')){
+		//wir wissen das die Var status den User enthält
+		$user = $status;
+	
 		//Daten korrekt, Login wird ausgeführt
 		//Um zu zeigen welcher Benutzer eingeloggt ist speichern wir den Benutzer in die Session
 		//Damit wir das Objekt speichern können müssen wir serealisieren. Speichert Benutzername, Passwort und Klasse ab 
-			$_SESSION['user'] = serialize($user);
-			//Verweis auf das File
-			header('Location: EBiblio_Hauptseite.php');
-			//beenden
-			die();
-		}else{
+		$_SESSION['user'] = serialize($user);
+		//Verweis auf das File
+		header('Location: EBiblio_Hauptseite.php');
+		//beenden
+		die();
+	}elseif($status == LOGIN_PWFALSE){
 		//Das Passwort passt nicht zum Benutzer
-			$passwfalsch=true;
-		}
+		$passwfalsch=true;
+
 	}else{
 	//Es wurde kein Benutzer mit dem Namen $user gefunden
 		$usernotfound=true;

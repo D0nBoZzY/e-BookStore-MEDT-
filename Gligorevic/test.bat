@@ -1,0 +1,1 @@
+php phpunit.phar --bootstrap ../vendor/autoload.php register_test.php

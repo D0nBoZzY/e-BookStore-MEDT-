@@ -3,13 +3,9 @@ require_once 'register.fnc.php';
 
 /**
  * Register test case.
+ * @author Mirza Kuljancic
  */
 class registertest extends PHPUnit_Framework_TestCase {
-	
-	/**
-	 *
-	 * @var register
-	 */
 	
 	/**
 	 * Prepares the environment before running a test.
@@ -32,7 +28,10 @@ class registertest extends PHPUnit_Framework_TestCase {
 	public function __construct() {
 	
 	}
-	
+	/**
+	* Testen einer erfolgreichen 
+	* Registrierung
+	*/
 	public function testerfolg(){
 		$bname = "asdf112";
 		$pw1 = "asdfg1";
@@ -42,6 +41,9 @@ class registertest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(REG_ERFOLGREICH, $status);
 	}
 	
+	/**
+	* Testen einer leeren Eingabes
+	*/
 	public function testleer(){
 		$bname = "asdf112";
 		$pw1 = "asdfg1";
@@ -56,7 +58,9 @@ class registertest extends PHPUnit_Framework_TestCase {
 		$status = Reg_richtigkeit_ueberprufen($bname,$pw1,"");
 		$this->assertEquals(REG_FEHLER_LEER, $status);
 	}
-	
+	/**
+	* Testen der gleichheit der PW
+	*/
 	public function testpwgleich(){
 		$bname = "asdf112";
 		$pw1 = "asdfg1";
@@ -67,6 +71,10 @@ class registertest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(REG_FEHLER_UNGLEICHPW, $status);
 	}
 	
+	/**
+	* Testen der gueltigen Zeichen fuer die 
+	* Eingabe
+	*/
 	public function testzeichen(){
 		$bname = "asdf112";
 		$pw1 = "asdfg1";
@@ -79,6 +87,9 @@ class registertest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals(REG_FEHLER_ZEICHENUNG, $status);
 	}
 	
+	/**
+	* Testen der gueltigen Lange der Eingaben
+	*/
 	public function testlenge(){
 		$bname = "asdf";
 		$pw = "asdfg1";

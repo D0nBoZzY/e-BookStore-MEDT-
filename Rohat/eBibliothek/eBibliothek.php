@@ -5,17 +5,20 @@
 
 // 1.) Variablen initialisieren
 session_start();
+error_reporting(0);	
+
 if (!isset($_SESSION['order'])) $_SESSION['order'] = '1';
 
 $err = '';
 $msg = '';
 $tab = '';
 	
-if (!isset($_POST['actor'])) {
-	$actor= '';
+if (!isset($_POST['user'])) {
+	$user= '';
 } else {
-	$actor = $_POST['actor'];
+	$user = $_POST['user'];
 }
+
 
 // Sortierung der Ausgabe bestimmen
 if (!isset($_GET['order'])) {
@@ -41,22 +44,24 @@ if (!isset($_GET['order'])) {
 	}
 }
 $_SESSION['order'] = $order;
-$radiobutton="";
+
+$radiobutton="";	
 // 2.) Verbindung zum DB-Server aufbauen
-$link = mysqli_connect('localhost', 'root', 'admin', 'sakila');
+$link = mysqli_connect('localhost', 'root', 'admin', 'ebib');
 if (!$link) {
     $err .= 'MySQL Error: ' . mysqli_connect_errno() . "<br>\n";
 } else {
     // $msg .= 'Success... ' . mysqli_get_host_info($link) . "<br>\n";
-	if(!isset($_POST['$radiobutton'])){
-	    $query = 'DELETE FROM actor WHERE actor_id=' . $_POST['$radiobutton'] . ';';
+	if(isset($_POST['loeschen'])){
+	
+	    $query = 'DELETE FROM user WHERE UserID='.$_POST['radiobutton'].';';
+		
 	   	$res = mysqli_query($link, $query);
-		echo($query);
 }
     // 3.) Query ausführen
    
-	$query = 'SELECT * FROM actor';
-    echo "Europe/Vienna";
+	$query = 'SELECT * FROM user';
+    
 	// $msg .= $query . "<br>\n";
     $res = mysqli_query($link, $query);
     if (!$res) {
@@ -67,10 +72,13 @@ if (!$link) {
         while ($row = mysqli_fetch_assoc($res)) {
             $tab .= '<tr>'
 				 .	'<td>'
-				 .  '<input type="radio" name="radiobutton" value="'.$row['actor_id'].'">'
+				 .  '<input type="radio" name="radiobutton" value="'.$row['UserID'].'">'
               	 .	'</td>'
 				 .	'<td>'
-                 .	$row['first_name']
+                 .	$row['benutzername']
+                 .  '</td>'
+				 .	'<td>'
+                 .	$row['passwort']
                  .  '</td>'
                  .  '</tr>'
                  .  "\n";
@@ -95,28 +103,21 @@ if (!$link) {
 		<h1>eBibliothek</h1>
         <?php if ($err != '') echo '<span style="color:red">'  . $err . '</span>'; ?>
         <?php if ($msg != '') echo '<span style="color:blue">' . $msg . '</span>'; ?>
-		<form action="eBibliothek.php" method="post">
+		<form action ="" method="post">
 			
 			<table border="1">
 				<tr>
                 	
 					<th>
-                    <input type="submit" name="loeschen" value="User loeschen">
+                    <input type="submit" name="loeschen" value="Delete User">
                    
                     </th>
                     <th>
-						<input type="text" name="titel">
-						<a href="?order=1<?php if ($order == '1') if ($dir == 'ASC') echo '&amp;dir=DESC'; ?>">Filmtitel</a>
-					</th>
-<!--					<th>
-						<a href="?order=2<?php if ($order == '2') if ($dir == 'ASC') echo '&amp;dir=DESC'; ?>">Episodentitel</a>
-						<input type="text" name="episode">
+						User
 					</th>
 					<th>
-						<a href="?order=3<?php if ($order == '3') if ($dir == 'ASC') echo '&amp;dir=DESC'; ?>">Genre</a>
-						<input type="text" name="genre">
-						<input type="submit" name="suchen" value="Suchen">
-					</th> -->
+						Passwort
+					</th>
 				</tr>
 				<?php if ($tab != '') echo $tab; ?>
 			</table>

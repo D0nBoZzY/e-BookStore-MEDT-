@@ -14,7 +14,13 @@ require_once '../vendor/autoload.php';
 // setup Propel
 require_once '../generated-conf/config.php';
 
+//include Smarty
+require_once 'smarty/libs/Smarty.class.php';
+
 require_once 'register.fnc.php';
+
+// create object
+$smarty = new Smarty();
 
 if (isset($_POST['reg_btn'])) {
 	//Eingaben in Variablen speichern
@@ -83,7 +89,17 @@ if (isset($_POST['reg_btn'])) {
 
 //Wenn Button nicht gedrückt wird soll Html Seite
 //trotzdem includet werden
-include 'form.html';
+//include 'form.html';
+
+$smarty->assign("Hm",$Hm);
+$smarty->assign("Fm",$Fm);
+
+if(isset($bname)){
+	$smarty->assign('bname',$bname);
+}
+
+// display it
+$smarty->display('form.tpl');
 
 
 ?>

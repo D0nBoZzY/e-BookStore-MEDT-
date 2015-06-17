@@ -1,6 +1,6 @@
 <?php
-require_once '/home/ebibliothek/vendor/autoload.php';
-require_once '/home/ebibliothek/proj/generated-conf/config.php';
+require_once '/home/schueler/propel/vendor/autoload.php';
+require_once '/home/schueler/propelProjects/weblayout_tmp/generated-conf/config.php';
   $bq = BookQuery::create();
   /**$books = array();
   $title = array();

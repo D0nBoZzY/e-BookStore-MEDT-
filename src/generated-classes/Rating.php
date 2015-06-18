@@ -15,4 +15,12 @@ use Base\Rating as BaseRating;
 class Rating extends BaseRating
 {
 
+  function bewerten ($book_id,$user_id,$sterne){
+    $r = RaitingQuery::create();
+    $r->setUserId($user_id);
+    $r->setBookId($book_id);
+    $r->setRating($sterne);
+    $r->save();
+
+  }
 }

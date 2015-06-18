@@ -15,4 +15,20 @@ use Base\RatingQuery as BaseRatingQuery;
 class RatingQuery extends BaseRatingQuery
 {
 
+  function bewerten ($book_id,$user_id,$sterne){
+    $r = RaitingQuery::create();
+    $r->setUserId($user_id);
+    $r->setBookId($book_id);
+    $r->setRating($sterne);
+    $r->save();
+
+  }
+}
+
+$con = Propel::getWriteConnection(\Map\BookTableMap::DATABASE_NAME);
+$sql = "SELECT * FROM book WHERE title LIKE '%$i%';";
+$stmt = $con->prepare($sql);
+$rs=$stmt->executeQuery();
+$array=mysqli_fetch_array($rs,MYSQLi_num);
+return $array;
 }

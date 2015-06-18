@@ -1,3 +1,4 @@
+
     <!-- page heading -->
     <div class="col-md-8" id="heading">
         <h1>Your Books</h1>
@@ -35,10 +36,10 @@
       <!--{$i = 0}
       {while $i < 9}-->
         <div class="col-md-4">
-          <h3>{$title[$i]}</h3>
-          <p><i>{$author[$i]}</i></p>
-          <p>{$content[$i]}</p>
-          <p><a class="btn btn-primary" href="{$path[$i]">View details &raquo;</a></p>
+          <h3>{$title}</h3>
+          <p><i>{$author}</i></p>
+          <p>{$content}</p>
+          <p><a class="btn btn-primary" href="{$path}">View details &raquo;</a></p>
         </div>
         <!--{$i++}
       {/while}-->

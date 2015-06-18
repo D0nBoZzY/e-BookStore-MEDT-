@@ -1,6 +1,7 @@
+
 <?php
-require_once '/home/schueler/propel/vendor/autoload.php';
-require_once '/home/schueler/propelProjects/weblayout_tmp/generated-conf/config.php';
+require_once '/home/ebibliothek/vendor/autoload.php';
+require_once '/home/ebibliothek/proj/generated-conf/config.php';
   $bq = BookQuery::create();
   /**$books = array();
   $title = array();
@@ -9,19 +10,11 @@ require_once '/home/schueler/propelProjects/weblayout_tmp/generated-conf/config.
     array_push($books, $book);
     array_push($title, $book->getTitle());
   }**/
-  $title = array();
-  $content = array();
-  $path = array();
-  $author = array();
-  $x = 1;
-  while($x < 9){
-    $book = $bq->findOneByBookId($x);
-    array_push($title, $book->getTitle());
-    array_push($content, $book->getTitle());
-    array_push($path, $book->getTitle());
-    array_push($author, $book->getTitle());
-    $i++;
-  }
+  $book = $bq->findOneByBookId(1); //Statisch gesetzt, da es Probleme beim auslesen gab, daran wird gerade gearbeitet
+  $title = $book->getTitle();
+  $content = $book->getContent();
+  $path = $book->getPath();
+  $author = $book->getAuthor();
   $smarty->assign("title", $title);
   $smarty->assign("content", $content);
   $smarty->assign("path", $path);

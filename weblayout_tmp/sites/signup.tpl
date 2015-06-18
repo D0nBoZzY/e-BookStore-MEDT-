@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
             	<input type="password" class="form-control input-lg" name="pw2" placeholder="Retype Password"/>
-            </div>
+            </div>                                                                      
             <button type="submit" class="btn btn-success btn-lg" name="reg_btn" id="reg_btn">Sign Up</button>
 	    {$error}
 	    {$notice}

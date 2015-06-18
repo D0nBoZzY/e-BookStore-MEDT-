@@ -1,6 +1,6 @@
 <?php
 
-$to = '4yhit@student.tgm.ac.at'; // admin/mod mail
+$to = 'mgala@student.tgm.ac.at'; // admin/mod mail
 
 $endingmessage = '';
 $err = '';

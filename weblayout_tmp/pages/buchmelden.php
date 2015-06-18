@@ -5,7 +5,7 @@ $to = 'mgala@student.tgm.ac.at'; // admin/mod mail
 $endingmessage = '';
 $err = '';
 $work = true;
-$buchid = 12345123; //derzeit ein beispiel -> wenn fertig ist es eine globale variable von der vorherigen seite
+$buchid = 1; //derzeit ein beispiel -> wenn fertig ist es eine globale variable von der vorherigen seite
 
 if (isset($_POST['send'])) {
 	//message
@@ -32,16 +32,16 @@ if (isset($_POST['send'])) {
 			$message = $antw1 . $antw2 . $antw3 .  $antw4 . $_POST['message'] . '<br /> <br />'. 'The reported book: ' . $buchid;
 			$endingmessage = 'Thank You For Your Support!';
 			header("Refresh: 2; URL=?page=home");
-		}		
+		}
 
 	//$userQ = new UserQuery();
-	//$id = $userQ->findOneById($uname); 
+	//$id = $userQ->findOneById($uname);
 	$id = 10;	     //user id; hier nur als beispiel; MUSS NOCH GESETZT WERDEN
         if($work){
 	$headers = 'From User ID: '.$id . "\r\n" .
 	'Reply-To: 4yhit@student.tgm.ac.at' . "\r\n" .
 	'X-Mailer: PHP/' . phpversion();
-	
+
 	mail($to, 'Book was reported', $message, $headers);
 }
 }
@@ -64,7 +64,7 @@ $smarty->assign("endingmessage", $endingmessage);
               document.getElementById('welcomeDiv1').setAttribute('style','visibility:hidden');
               }
      }
-     
+
 	</script>
 
 <style type="text/css">

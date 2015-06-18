@@ -34,3 +34,7 @@
       </div>
     </div>
   </div>
+
+  <form action="?page=buchmelden" method="post" autocomplete="off">
+  <button type="submit" name="meldensubmit">Buch melden</button>
+  </form>

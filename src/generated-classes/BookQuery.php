@@ -84,20 +84,21 @@ Version: 2015-05-13
       }
   }
 
-  /*
-  Diese Methode funktioniert nicht. Er befuellt zwar rs aber gibt kein Array zurueck
-  Such-Funktion um Buecher zu suchen
-  Return: Buch-Array
-  Autor: lzainzinger, sarah kreutzer
-  Version: 2015-05-19
+
+
+  //Diese Methode funktioniert nicht. Er befuellt zwar rs aber gibt kein Array zurueck
+  //Such-Funktion um Buecher zu suchen
+  //Return: Buch-Array
+  //Autor: lzainzinger, sarah kreutzer
+  //Version: 2015-05-19
 
   function search($i){
     $con = Propel::getWriteConnection(\Map\BookTableMap::DATABASE_NAME);
     $sql = "SELECT * FROM book WHERE title LIKE '%$i%';";
     $stmt = $con->prepare($sql);
     $rs=$stmt->executeQuery();
-
-    return $rs;
+    $array=mysqli_fetch_array($rs,MYSQLi_num);
+    return $array;
   }
   */
 

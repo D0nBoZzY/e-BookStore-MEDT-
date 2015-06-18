@@ -39,7 +39,7 @@
           <h3>{$title}</h3>
           <p><i>{$author}</i></p>
           <p>{$content}</p>
-          <p><a class="btn btn-primary" href="{$path}">View details &raquo;</a></p>
+          <p><a class="btn btn-primary" href="detail.tpl">View details &raquo;</a></p>
         </div>
         <!--{$i++}
       {/while}-->
